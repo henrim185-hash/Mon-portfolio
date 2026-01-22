@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉlectroProtection - Solutions contre la foudre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a3a8f;
+            --secondary: #f0b400;
+            --accent: #e63946;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7ff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #dca500;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #152b70;
+        }
+
+        /* Header et navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 143, 0.85), rgba(26, 58, 143, 0.9)), url('https://images.unsplash.com/photo-1629654291660-3c98113a0438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Section services */
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2.5rem;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Section à propos */
+        .about {
+            background-color: #f0f3ff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section équipements */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .equipment-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .equipment-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Section contact */
+        .contact {
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header et navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-bolt-lightning"></i>
+                ÉlectroProtection
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#equipements">Équipements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Section hero / accueil -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <h1>Protection complète contre la foudre</h1>
+            <p>Expert en installation, fourniture et maintenance de systèmes de protection contre la foudre
+                (paratonnerres, parafoudres) pour les entreprises et particuliers.</p>
+            <a href="#contact" class="btn btn-primary">Demander un devis gratuit</a>
+        </div>
+    </section>
+
+    <!-- Section services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Installation</h3>
+                        <p>Installation professionnelle de systèmes de protection contre la foudre adaptés à vos besoins
+                            spécifiques. Nous assurons une pose conforme aux normes en vigueur.</p>
+                        <ul>
+                            <li>Étude et conception sur mesure</li>
+                            <li>Installation de paratonnerres</li>
+                            <li>Pose de parafoudres</li>
+                            <li>Mise à la terre conforme</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Fourniture</h3>
+                        <p>Nous fournissons des équipements de haute qualité provenant des meilleurs fabricants pour une
+                            protection optimale contre les surtensions et la foudre.</p>
+                        <ul>
+                            <li>Paratonnerres de différentes technologies</li>
+                            <li>Parafoudres pour tableaux électriques</li>
+                            <li>Équipements de mise à la terre</li>
+                            <li>Accessoires et connectiques spécialisées</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Maintenance</h3>
+                        <p>Contrôle régulier et maintenance préventive de vos installations pour garantir leur
+                            efficacité et leur conformité aux normes de sécurité.</p>
+                        <ul>
+                            <li>Vérification périodique des installations</li>
+                            <li>Contrôle de la résistance de terre</li>
+                            <li>Remplacement d'équipements défectueux</li>
+                            <li>Rapports de vérification détaillés</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section à propos -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <h2>À propos de nous</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Experts en protection contre la foudre depuis 15 ans</h3>
+                    <p>ÉlectroProtection est une entreprise spécialisée dans la protection des personnes et des biens
+                        contre les effets destructeurs de la foudre. Notre équipe d'experts certifiés intervient sur
+                        tout type de bâtiment : maisons individuelles, immeubles, entreprises, industries et bâtiments
+                        publics.</p>
+                    <p>Nous combinons expertise technique et connaissance approfondie des normes en vigueur (NF C
+                        17-102, IEC 62305) pour vous offrir des solutions sur mesure et efficaces.</p>
+                    <p>Notre engagement : votre sécurité et la protection de vos installations électriques et
+                        électroniques.</p>
+                    <a href="#contact" class="btn">Contactez-nous</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1624398707429-5d3c3c5591b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Technicien installant un paratonnerre">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section équipements -->
+    <section class="equipment" id="equipements">
+        <div class="container">
+            <h2>Nos Équipements</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <i class="fas fa-house-circle-check"></i>
+                    <h3>Paratonnerres</h3>
+                    <p>Systèmes de protection extérieure avec dispositifs à dispositif d'amorçage (PDA) ou tiges
+                        Franklin pour capturer la foudre et l'évacuer vers la terre.</p>
+                </div>
+                <div class="equipment-card">
+                    <i class="fas fa-plug-circle-bolt"></i>
+                    <h3>Parafoudres</h3>
+                    <p>Protection contre les surtensions pour vos installations électriques et électroniques, avec
+                        différents niveaux de protection adaptés à vos besoins.</p>
+                </div>
+                <div class="equipment-card">
+                    <i class="fas fa-earth-americas"></i>
+                    <h3>Mise à la terre</h3>
+                    <p>Systèmes de prise de terre performants et conformes aux normes pour assurer l'évacuation
+                        sécurisée du courant de foudre vers le sol.</p>
+                </div>
+                <div class="equipment-card">
+                    <i class="fas fa-gauge-high"></i>
+                    <h3>Contrôle et mesure</h3>
+                    <p>Équipements de mesure et de contrôle pour vérifier l'efficacité de vos installations et garantir
+                        leur conformité aux normes de sécurité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contactez-nous</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Prenez contact avec nos experts</h3>
+                    <p>Notre équipe est à votre disposition pour étudier vos besoins et vous proposer la solution de
+                        protection adaptée.</p>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>123 Rue de l'Électricité<br>75000 Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>01 23 45 67 89</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@electroprotection.fr</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lun-Ven: 8h-18h<br>Samedi: 9h-12h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <input type="tel" placeholder="Votre téléphone">
+                        <input type="text" placeholder="Sujet">
+                        <textarea placeholder="Votre message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt-lightning"></i>
+                        ÉlectroProtection
+                    </div>
+                    <p>Spécialistes en installation, fourniture et maintenance de systèmes de protection contre la
+                        foudre depuis 2008.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#equipements">Équipements</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Nos services</h4>
+                    <ul>
+                        <li><a href="#services">Installation</a></li>
+                        <li><a href="#services">Fourniture</a></li>
+                        <li><a href="#services">Maintenance</a></li>
+                        <li><a href="#services">Étude de projet</a></li>
+                        <li><a href="#services">Contrôle réglementaire</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Restons connectés</h4>
+                    <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités et conseils sur la protection
+                        contre la foudre.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Votre email">
+                        <button class="btn" style="margin-top: 10px;">S'inscrire</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 ÉlectroProtection. Tous droits réservés. | Conforme aux normes NF C 17-102 et IEC 62305
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre message! Nous vous répondrons dans les plus brefs délais.');
+            contactForm.reset();
+        });
+
+        // Animation au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Appliquer l'animation aux sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
