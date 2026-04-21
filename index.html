@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Michel Dev - Portfolio</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <div class="noise"></div>
+
+        <nav>
+            <div class="nav-logo">Michel Dev</div>
+            <ul class="nav-links">
+                <li><a href="#skills">compétences</a></li>
+                <li><a href="#projects">projets</a></li>
+                <li><a href="#experience">parcours</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <div class="status">
+                <div class="dot"></div>
+                Disponible
+            </div>
+        </nav>
+
+        <!-- ═══ HERO ═══ -->
+        <section class="hero">
+            <div class="hero-grid"></div>
+            <div style="position: relative; max-width: 900px">
+                <div class="eyebrow">Développeur Fullstack Junior</div>
+                <h1>Je construis des interfaces <em>mémorables</em></h1>
+                <p class="hero-sub">
+                    Passionné par les interactions fluides, le design systémique et les performances
+                    web. Je transforme des idées en expériences digitales précises et élégantes.
+                </p>
+                <div class="cta-row">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline">Me contacter</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="stat-num">1+</div>
+                        <div class="stat-label">Années d'exp.</div>
+                    </div>
+                    <div>
+                        <div class="stat-num">1+</div>
+                        <div class="stat-label">Projets Réalisés</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ COMPÉTENCES ═══ -->
+        <section id="skills">
+            <div class="section-header">
+                <div class="section-label">// 01 — compétences</div>
+                <h2>Mes technos</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-cat">Framework</div>
+                    <div class="skill-name">Vue js / Express js</div>
+                    <div style="font-size: 0.72rem; color: var(--muted)">
+                        Composition API, Vue Router, API REST avec Express
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-cat">Langage</div>
+                    <div class="skill-name">Javascript</div>
+                    <div style="font-size: 0.72rem; color: var(--muted)">
+                        ES6+, DOM manipulation, asynchronous programming
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-cat">Style</div>
+                    <div class="skill-name">Bootstrap</div>
+                    <div style="font-size: 0.72rem; color: var(--muted)">
+                        Grid system, composants UI réutilisables, responsive design
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-cat">Backend</div>
+                    <div class="skill-name">Node.js / Express js</div>
+                    <div style="font-size: 0.72rem; color: var(--muted)">
+                        API REST, middleware, authentication, gestion des routes
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-cat">Base de donnée</div>
+                    <div class="skill-name">MySQL / SQL</div>
+                    <div style="font-size: 0.72rem; color: var(--muted)">
+                        CRUD, relations, requêtes SQL, jointures
+                    </div>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" style="width: 78%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ PROJETS ═══ -->
+        <section id="projects">
+            <div class="section-header">
+                <div class="section-label">// 02 — projets</div>
+                <h2>Réalisations récentes</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-thumb t1">
+                        <img src="/calculateur.png" alt="" />
+                    </div>
+                    <div class="project-body">
+                        <div class="project-title">Calculateur du Droit Social</div>
+                        <div class="project-desc">
+                            Application de calculatrice moderne développée en Vue.js avec interface
+                            responsive, gestion des opérations mathématiques et historique des
+                            calculs.
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Vue.js</span><span class="tag">JavaScript</span
+                            ><span class="tag">CSS</span>
+                        </div>
+                        <a
+                            href="https://calculateur-sigma.vercel.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="tag"
+                            style="text-decoration: none; margin-top: 20px; display: inline-block"
+                            >Voir l’app</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ EXPÉRIENCE ═══ -->
+        <section id="experience">
+            <div class="section-header">
+                <div class="section-label">// 03 — parcours</div>
+                <h2>Expérience</h2>
+            </div>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <div class="exp-year">2025 →</div>
+                    <div>
+                        <div class="exp-title">Développeur Web (Stage académique)</div>
+                        <div class="exp-company">
+                            Laboratoire National de la Santé Publique (LNSP)
+                        </div>
+                        <div class="exp-desc">
+                            Conception et développement d’une application de gestion de stock de
+                            cartouches d’encre. Backend en PHP/MySQL et interface en
+                            HTML/CSS/JavaScript avec gestion des données et des formulaires.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ CONTACT ═══ -->
+        <section id="contact">
+            <div class="section-label" style="margin-bottom: 2rem">// 04 — contact</div>
+            <div class="contact-box">
+                <div class="contact-title">Travaillons ensemble</div>
+                <div class="contact-sub">
+                    ⚠️ Le formulaire de contact n’est pas encore fonctionnel pour le moment. Vous
+                    pouvez me contacter via les réseaux sociaux ci-dessous.
+                </div>
+                <div class="input-row">
+                    <input class="field" type="text" placeholder="Votre nom" />
+                    <input class="field" type="email" placeholder="Email" />
+                    <textarea
+                        class="field"
+                        rows="4"
+                        placeholder="Décrivez votre projet..."></textarea>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; padding: 0.8rem">
+                    Envoyer le message
+                </button>
+                <div class="social-row">
+                    <a href="#" class="social-link">GitHub</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">Twitter / X</a>
+                    <a href="#" class="social-link">CV PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>© 2025 Alex.dev — Conçu & développé avec soin</div>
+            <div>Site Vibe codé, j'avais un peu la flemme 😒 mais j'en ferai un autre entièrement codé par moi 🌚</div>
+        </footer>
+    </body>
+</html>
