@@ -505,3 +505,88 @@ footer {
         gap: 1.5rem;
     }
 }
+
+
+
+.about {
+    padding: 6rem 3rem;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+/* PHOTO */
+.about-photo {
+    flex: 1;
+    max-width: 350px;
+    height: 420px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.about-photo:hover img {
+    transform: scale(1.05);
+}
+
+/* INFOS */
+.about-info {
+    flex: 1.5;
+}
+
+.about-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+
+/* BADGES SKILLS */
+.about-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.about-badges span {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+}
+
+
+@media (max-width: 900px) {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 240px;
+        height: 300px;
+    }
+
+    .about-badges {
+        justify-content: center;
+    }
+}
